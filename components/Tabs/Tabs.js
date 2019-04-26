@@ -1,5 +1,8 @@
+// STEP 3: Create the class. Classes aren't hoisted!
 class TabLink {
   constructor(tabElement){
+    console.log(link);
+
     // assign this.tabElement to the tabElement DOM reference
     // this.tabElement;
     
@@ -23,7 +26,7 @@ class TabLink {
     // this.cards = Array.from(this.cards).map();
 
     // Add a click event that invokes this.selectTab
-    // this.tabElement.addEventListener();
+    // this.tabElement.addEventListener();*/
   }
 
   selectTab(){
@@ -69,4 +72,12 @@ class TabCard {
 - In your .forEach() method's callback function, return a new instance of TabLink and pass in each tab as a parameter
 
 */
-let tabs = document.querySelectorAll();
+
+// STEP 1: Get all the elements from the DOM
+const tabs = document.querySelectorAll('.tab');
+// console.log(tabs);
+
+// STEP 2: Iterate over each element from our NodeList and create a new object
+tabs.forEach(function(tab)){
+  return new TabLink(tab);
+}
