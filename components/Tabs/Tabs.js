@@ -1,13 +1,17 @@
 // STEP 3: Create the class. Classes aren't hoisted!
 class TabLink {
   constructor(tabElement){
-    console.log(link);
+    // console.log(tabElement);
 
-    // assign this.tabElement to the tabElement DOM reference
-    // this.tabElement;
-    
-    // Get the `data-tab` value from this.tabElement and store it here
+// STEP 4: Matched the data-set values between our links and our content
+
+  // assign this.tabElement to the tabElement DOM reference
+    // this.tabElement = document.querySelector(`.card[data-tab="${link.dataset.tab}"]`);
+    this.tabContent = document.querySelector(`.card[data-tab="${link.dataset.tab}"]`);
+// STEP 5: Created a new content object from our matched data-set content tab    
+  // Get the `data-tab` value from this.tabElement and store it here
     // this.tabData = ; 
+    this.tabContent = new TabCard(this.tabContent);
     
     // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
     
@@ -50,11 +54,12 @@ class TabLink {
     // this.cards.forEach(card => card.selectCard());
   }
 }
-
+// STEP 6: Create Content class and passin the tabContent reference to the DOM element
 class TabCard {
   constructor(cardElement){
     // Assign this.cardElement to the cardElement DOM reference
-    // this.cardElement;
+    this.cardElement = cardElement;
+    console.log(cardElement);
   }
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
@@ -78,6 +83,6 @@ const tabs = document.querySelectorAll('.tab');
 // console.log(tabs);
 
 // STEP 2: Iterate over each element from our NodeList and create a new object
-tabs.forEach(function(tab)){
+tabs.forEach(function(tab){
   return new TabLink(tab);
-}
+})
