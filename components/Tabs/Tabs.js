@@ -26,21 +26,24 @@ class TabLink {
       // else if `all` is false, only select the cards with matching this.tabData values
       // this.cards = ;
     }
-    /* <- Delete this comment block when you work on the if statement
+    */ 
+   //<- Delete this comment block when you work on the if statement
 
 
 
      // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
     // this.cards = Array.from(this.cards).map();
 
-    // Add a click event that invokes this.selectTab
-    // this.tabElement.addEventListener();*/
+// STEP 9: Adding an event listener for our link and binding 'this'
+  // Add a click event that invokes this.selectTab
+    this.tabElement.addEventListener('click', () => this.selectTab());
   }
 
+// STEP 10: Have the tabContent toggle off and on based on our Content class's method
   selectTab(){
 
     // Select all elements with the .tab class on them
-    // const tabs = document.querySelectorAll();
+    const tabs = document.querySelectorAll('.tab');
     
     // Iterate through the NodeList removing the .active-tab class from each element
     // tabs.forEach()
@@ -61,13 +64,15 @@ class TabLink {
 // STEP 6: Create Content class and passin the tabContent reference to the DOM element
 class TabCard {
   constructor(cardElement){
+// STEP 7: setting up the 'this' keyword for the Content class
     // Assign this.cardElement to the cardElement DOM reference
     this.cardElement = cardElement;
-    console.log(cardElement);
+    // console.log(cardElement);
   }
+// STEP 8: Creating a method that can be called to toggle our contentTab off and on
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
-    // this.cardElement;
+    this.cardElement.classList.toggle('active-tab');
   }
 
 }
