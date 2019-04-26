@@ -11,15 +11,7 @@ class TabLink {
 // STEP 5: Created a new content object from our matched data-set content tab    
   // Get the `data-tab` value from this.tabElement and store it here
     // this.tabData = ; 
-    this.cardsContainer = new TabCard(this.cardsContainer);
-    
-
-
-
-
-
-
-    // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
+    this.cardsContainer = new TabCard(this.cardsContainer);// We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
     
 // <- Delete this comment block when you work on the if statement
 
@@ -34,23 +26,13 @@ class TabLink {
   
 //<- Delete this comment block when you work on the if statement
 
-
-
 // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. - DONE
     this.cards = Array.from(this.cards).map(card => new TabCard(card));
-  
 
-
-
-
-
-
-// STEP 9: Adding an event listener for our link and binding 'this'
+    // STEP 9: Adding an event listener for our link and binding 'this'
   // Add a click event that invokes this.selectTab
     tabElement.addEventListener('click', () => this.selectTab());
   }
-
-
 
 // DONE
 // STEP 10: Have the tabContent toggle off and on based on our Content class's method
@@ -60,8 +42,13 @@ class TabLink {
     const tabs = document.querySelectorAll('.tab');
     
     // Iterate through the NodeList removing the .active-tab class from each element - DONE
-    tabs.forEach.remove('.active-tab');
-    
+            // tabs.forEach.remove('.active-tab');
+            // tabs.forEach(remove(active-tab){
+            //   // remove .active-tab
+            //   return
+            // });
+
+    tabs.forEach(tab => tab.remove = 'active-tab');
 
     // Select all of the elements with the .card class on them - DONE
     const cards = document.querySelectorAll('.cards');
@@ -92,7 +79,7 @@ class TabCard {
   selectCard(){
     // Update the style of this.cardElement to display = "flex"
     // this.cardElement.classList.toggle('active-tab');
-    this.cardElement.classList.diplay('flex');
+    this.cardElement.classList.diplay = "flex";
   }
 
 }
