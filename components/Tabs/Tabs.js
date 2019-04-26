@@ -7,12 +7,14 @@ class TabLink {
 
   // assign this.tabElement to the tabElement DOM reference
     // this.tabElement = document.querySelector(`.card[data-tab="${link.dataset.tab}"]`);
-    this.tabContent = document.querySelector(`.card[data-tab="${link.dataset.tab}"]`);
+    this.cardsContainer = document.querySelector(`.card[data-tab="${tabElement.dataset.tab}"]`);
 // STEP 5: Created a new content object from our matched data-set content tab    
   // Get the `data-tab` value from this.tabElement and store it here
     // this.tabData = ; 
-    this.tabContent = new TabCard(this.tabContent);
+    this.cardsContainer = new TabCard(this.cardsContainer);
     
+
+
     // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
     
     /* <- Delete this comment block when you work on the if statement
@@ -25,6 +27,8 @@ class TabLink {
       // this.cards = ;
     }
     /* <- Delete this comment block when you work on the if statement
+
+
 
      // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
     // this.cards = Array.from(this.cards).map();
