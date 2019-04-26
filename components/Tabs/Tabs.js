@@ -15,24 +15,33 @@ class TabLink {
     
 
 
+
+
+
+
     // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
     
-    /* <- Delete this comment block when you work on the if statement
+// <- Delete this comment block when you work on the if statement
+
     // Check to see if this.tabData is equal to 'all'
-    if(){
+    if(this.tabData === 'all'){
       // If `all` is true, select all cards regardless of their data attribute values
-      // this.cards = ;
+      this.cards = ;
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
-      // this.cards = ;
+      this.cards = ;
     }
-    */ 
-   //<- Delete this comment block when you work on the if statement
+  
+//<- Delete this comment block when you work on the if statement
+
+// Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
+    this.cards = Array.from(this.cards).map(card => new TabCard(card));
+    //this.cards = Array.from(this.cards).map((card) => new TabCard(card));
 
 
 
-     // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
-    // this.cards = Array.from(this.cards).map();
+
+
 
 // STEP 9: Adding an event listener for our link and binding 'this'
   // Add a click event that invokes this.selectTab
@@ -46,19 +55,19 @@ class TabLink {
     const tabs = document.querySelectorAll('.tab');
     
     // Iterate through the NodeList removing the .active-tab class from each element
-    // tabs.forEach()
+    tabs.forEach.remove('activeClass');
 
     // Select all of the elements with the .card class on them
-    // const cards = ;
+    const cards = ;
 
     // Iterate through the NodeList setting the display style each one to 'none'
-    // cards.forEach()
+    cards.forEach.display('none');
     
     // Add a class of ".active-tab" to this.tabElement
-    // this.tabElement;
+    this.tabElement;
   
     // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
-    // this.cards.forEach(card => card.selectCard());
+    this.cards.forEach(card => card.selectCard());
   }
 }
 // STEP 6: Create Content class and passin the tabContent reference to the DOM element
